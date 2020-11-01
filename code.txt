@@ -38,12 +38,19 @@ conn.execute("INSERT INTO FOOTBALL (ID,TEAM,CONFERENCE,RANK,POINTS) \
       VALUES (10, 'Clemson', 'ACC', 10, 33.21)");
 
 
-
 cursor = conn.execute("SELECT ID, team, conference, points from FOOTBALL")
 for row in cursor:
-   print (f"RANK = {row[0]}")
-   print (f"TEAM = {row[1]}") 
-   print (f"CONFERENCE = {row[2]}")
-   print (f"POINTS = {row[3]}")
+   print ("RANK = ", row[0])
+   print ("TEAM = ", row[1]) 
+   print ("CONFERENCE = ", row[2])
+   print ("POINTS = ", row[3])
+
 
 conn.execute("DELETE from FOOTBALL where ID = 10;")
+conn.commit()
+print ("Total number of rows deleted: ", conn.total_changes)
+
+
+conn.execute("UPDATE FOOTBALL set POINTS = 33.8 where ID = 9")
+conn.commit()
+print ("Total number of rows updated :", conn.total_changes)
