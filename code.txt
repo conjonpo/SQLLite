@@ -1,0 +1,49 @@
+conn.execute('''CREATE TABLE FOOTBALL
+         (ID INT PRIMARY KEY     NOT NULL,
+         TEAM           TEXT     NOT NULL,
+         CONFERENCE     TEXT     NOT NULL,
+         RANK           INT,
+         POINTS         REAL);''')
+
+
+
+conn.execute("INSERT INTO FOOTBALL (ID,TEAM,CONFERENCE,RANK,POINTS) \
+      VALUES (1, 'Ohio State', 'Big Ten', 1, 51.6)");
+
+conn.execute("INSERT INTO FOOTBALL (ID,TEAM,CONFERENCE,RANK,POINTS) \
+      VALUES (2, 'Oklahoma', 'Big 12', 2, 50.61)");
+
+conn.execute("INSERT INTO FOOTBALL (ID,TEAM,CONFERENCE,RANK,POINTS) \
+      VALUES (3, 'Alabama', 'SEC', 3, 45.61)");
+
+conn.execute("INSERT INTO FOOTBALL (ID,TEAM,CONFERENCE,RANK,POINTS) \
+      VALUES (4, 'LSU', 'SEC', 4, 44.3)");
+
+conn.execute("INSERT INTO FOOTBALL (ID,TEAM,CONFERENCE,RANK,POINTS) \
+      VALUES (5, 'Georgia', 'SEC', 5, 37.23)");
+
+conn.execute("INSERT INTO FOOTBALL (ID,TEAM,CONFERENCE,RANK,POINTS) \
+      VALUES (6, 'USC', 'Pac-12', 6, 36.62)");
+
+conn.execute("INSERT INTO FOOTBALL (ID,TEAM,CONFERENCE,RANK,POINTS) \
+      VALUES (7, 'Oregon', 'Pac-12', 7, 34.5)");
+
+conn.execute("INSERT INTO FOOTBALL (ID,TEAM,CONFERENCE,RANK,POINTS) \
+      VALUES (8, 'Texas', 'Big 12', 8, 33.85)");
+
+conn.execute("INSERT INTO FOOTBALL (ID,TEAM,CONFERENCE,RANK,POINTS) \
+      VALUES (9, 'Florida', 'SEC', 9, 33.82)");
+
+conn.execute("INSERT INTO FOOTBALL (ID,TEAM,CONFERENCE,RANK,POINTS) \
+      VALUES (10, 'Clemson', 'ACC', 10, 33.21)");
+
+
+
+cursor = conn.execute("SELECT ID, team, conference, points from FOOTBALL")
+for row in cursor:
+   print (f"RANK = {row[0]}")
+   print (f"TEAM = {row[1]}") 
+   print (f"CONFERENCE = {row[2]}")
+   print (f"POINTS = {row[3]}")
+
+conn.execute("DELETE from FOOTBALL where ID = 10;")
