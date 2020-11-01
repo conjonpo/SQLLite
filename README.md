@@ -10,4 +10,8 @@ The purpose of this program is to create, modify, delete and query a database us
 
 * Python 8.3.2
 * Visual Studio Code
-* SQLLite package
+* SQLLite package for Python
+
+## Execution
+
+The first step is to create a database or connect to an existing one. To do this, this block of code needs to run, substituting the name of your database for the one I listed. If a database isn't already created, this code automatically creates one.
