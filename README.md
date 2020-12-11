@@ -8,7 +8,7 @@ The purpose of this program is to create, modify, delete and query a database us
 
 ## Development Environment
 
-* Python 8.3.2
+* Python 3.8.2
 * Visual Studio Code
 * Python extension for VS Code
 * SQLLite package for Python
